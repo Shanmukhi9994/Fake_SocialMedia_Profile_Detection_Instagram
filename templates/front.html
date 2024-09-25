@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instagram Account Prediction</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+       body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: url('{{ url_for('static', filename='bg.jpg') }}') no-repeat center center fixed;
+            background-size: cover;
+            position: relative;
+            height: 100vh;
+        }
+        .result{
+          color: #333;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(252, 251, 251, 0.955);
+            text-align: center;
+            background-color: rgba(255, 255, 255, 0.8);
+        }
+
+        .container h1 {
+            color: #c93939;
+        }
+
+        .profile {
+            margin-bottom: 20px;
+        }
+
+        .profile input[type="text"] {
+            width: 200px;
+            padding: 10px;
+            margin-right: 10px;
+        }
+
+        .profile button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .profile button:hover {
+            background-color: #45a049;
+        }
+
+        .bottom {
+            position: bottom;
+            height: 25%;
+            width: 100%;
+            background-color: rgba(17, 17, 17, 0.8);
+            padding: 20px;
+            color: #fff;
+        }
+
+        p {
+            font-size: 15pt;
+            font-family: Lucida Sans;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Instagram Account Prediction</h1>
+        <form action="/" method="POST" class="profile">
+            <label for="username" style="color: #333;">Enter Instagram Username:</label>
+            <input type="text" id="username" name="username" placeholder="Username">
+            <button type="submit">Submit</button>
+        </form>
+        {% if mine is not none %}
+        <div class="result">
+            <h2 style="color: #333;">Prediction Result:</h2>
+            <p style="color: #333;">{{ mine }}</p>
+            <p style="color: #333;">Probability: {{ percentage }}%</p>
+            <h2 style="color: #333;">Details:</h2>
+            <p style="color: #333;">{{ details }}</p>
+        </div>
+        {% endif %}
+    </div>
+    <div class="bottom">
+      <img src="{{ url_for('static', filename='fk.jpg') }}" width="600" height="300" align="right" alt="" style="padding:40px;">
+        <h1>About Us</h1>
+        <p>Cease Fire is a leading company in the field of fake Instagram account detection, located in Bhimavaram, Andhra Pradesh, India. With our advanced technology and dedicated team, we are committed to providing reliable and effective solutions to combat fraudulent activities on social media platforms.</p>
+        <p>Our mission is to safeguard the integrity of online interactions and protect the reputation of individuals and businesses. We strive to stay ahead of the evolving landscape of digital fraud and offer our clients peace of mind in the digital realm.</p>
+    </div>
+    <script>
+        function checkAccount() {
+            var username = document.getElementById('username').value;
+            var resultElement = document.getElementById('result');
+
+            // Dummy check for demonstration
+            if (username.length < 3) {
+                resultElement.textContent = 'This username seems to be too short.';
+                resultElement.style.backgroundColor = '#FF6347'; // Red color
+            } else {
+                resultElement.textContent = 'This username seems to be legitimate.';
+                resultElement.style.backgroundColor = '#32CD32'; // Green color
+            }
+        }
+    </script>
+</body>
+</html>

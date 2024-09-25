@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instagram Account Prediction</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <header>
+        <div class="logo-left">
+            <img src="{{ url_for('static', filename='srkr.jpg') }}" alt="Logo Left">
+        </div>
+        <div class="logo-right">
+            <img src="{{ url_for('static', filename='srkr1.png') }}" alt="Logo Right">
+        </div>
+    </header>
+    <div class="container">
+        <h1>Instagram Account Prediction</h1>
+        <form action="/sub" method="POST">
+            <input type="text" name="username" placeholder="Enter Instagram Username">
+            <button type="submit">Submit</button>
+        </form>
+        {% if mine is not none %}
+        <div class="result">
+            <h2>Prediction Result:</h2>
+            <p>{{ mine }}</p>
+            <p>Probability: {{ percentage }}%</p>
+            <h2>Details:</h2>
+            <p>{{ details }}</p>
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>

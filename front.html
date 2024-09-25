@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fake Instagram Profile Detection</title>
+  <link rel="stylesheet" href="styles.css">
+<style>
+body {
+  font-family: Arial, sans-serif;
+  background-color: pink;
+  margin: 0;
+  padding: 0;
+  background: url('bg.jpg') no-repeat center center fixed;
+  background-size: cover;
+  position: relative;
+  height: 100vh;
+}
+
+.container {
+  max-width: 600px;
+  margin: 50px auto;
+  padding: 20px;
+  
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(252, 251, 251, 0.955);
+  text-align: center;
+}
+
+.container h1 {
+  color: #f1f4f7;
+}
+
+.profile {
+  margin-bottom: 20px;
+}
+
+.profile input[type="text"] {
+  width: 200px;
+  padding: 10px;
+  margin-right: 10px;
+}
+
+.profile button {
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  color: #f1f4f7
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.profile button:hover {
+  background-color: #45a049;
+}
+
+#result {
+  font-size: 18px;
+}
+
+/*.center-box {
+  width: 200px;
+  height: 200px;
+  margin: 20px auto;
+  border: 2px solid #333;
+  border-radius: 10px;
+  background-color: #161515;
+}*/
+.overlay {
+position: absolute;
+ 
+  height:100%;
+  width:100%;
+ 
+ 
+  
+}
+
+.bottom {
+    position: bottom;
+ 
+  height:25%;
+  width:100%;
+ 
+ 
+  background-color: rgba(17, 17, 17, 0.8);
+}
+p{
+    font-size: 15pt;
+    font-family: lucida Sans;
+    color: white;
+}
+
+</style>
+</head>
+<body>
+   
+    <center> <br><br><h1 style="color:rgb(239, 155, 167); font-size: 25pt; font-family: ;">PRAJWALAN 2K24 FAKE ACCOUNT DETECTION</h1></center></div>
+    
+    < class="overlay">
+  <div class="container">
+    <h1>Fake Instagram Profile Detection</h1>
+    <div class="profile">
+      <label for="username" style="color: #f1f4f7;">Enter Instagram Username:</label>
+      <input type="text" id="username" placeholder="Username">
+      <button onclick="checkAccount()">Check</button>
+    </div>
+    <p id="result"></p>
+  </div>
+  <div class="bottom">
+    <img src="fk.jpg" width="600" height="300" align="right" alt="" style="padding:40px;">
+    <h1 style="color: white;">About Us</h1>
+    <p>Cease Fire is a leading company in the field of fake Instagram account detection, located in Bhimavaram, Andhra Pradesh, India. With our advanced technology and dedicated team, we are committed to providing reliable and effective solutions to combat fraudulent activities on social media platforms.  </p><br>
+    <p>Our mission is to safeguard the integrity of online interactions and protect the reputation of individuals and businesses. We strive to stay ahead of the evolving landscape of digital fraud and offer our clients peace of mind in the digital realm.</p> 
+</div>
+  <script src="script.js">
+function checkAccount() {
+  var username = document.getElementById('username').value;
+  var resultElement = document.getElementById('result');
+  var centerBox = document.getElementById('centerBox');
+
+  // Dummy check for demonstration
+  if (username.length < 3) {
+    resultElement.textContent = 'This username seems to be too short.';
+    centerBox.style.backgroundColor = '#FF6347'; // Red color
+  } else {
+    resultElement.textContent = 'This username seems to be legitimate.';
+    centerBox.style.backgroundColor = '#32CD32'; // Green color
+  }
+}
+
+</script>
+</body>
+</html>
